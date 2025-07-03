@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --fonte-principal: 'Open Sans', sans-serif;
+    --fonte-secundaria: 'Luckiest Guy', sans-serif;
+
+    --imagem-de-fundo-cabecalho: url(./images/image-cabecalho.png);
+    
+    --cor-primeiro:#23272A;
+    --cor-segundo:#ffffff;
+    --cor-terceiro: #f6f6f6;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: var(--fonte-principal);
+    color: var(--cor-primeiro);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.cabecalho{
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    background: var(--imagem-de-fundo-cabecalho) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0 2rem;
+    width: 100%;
+    height: 100vh;
+}
+
+.cabecalho__titulo, .cabecalho__texto{
+    color: var(--cor-segundo);
+}
+
+.cabecalho__titulo{
+    font-family: var(--fonte-secundaria);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.cabecalho__botoes{
+    display: grid;
+    gap: 1rem;
+}
+
+.cabecalho__botao{
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    width: 100%;
+    background-color: var(--cor-segundo);
+    color: var(--cor-primeiro);
+    cursor: pointer;
+}
+
+.cabecalho__botao:last-child{
+    background-color: var(--cor-primeiro);
+    color: var(--cor-segundo);
+}
+
+.secao-convite , .secao-canal, .secao-organizar, .secao-conexao{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.secao-convite h2, .secao-canal h2, .secao-organizar h2{
+    font-weight:800;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.secao-convite figure img, .secao-canal figure img, .secao-organizar figure img, .secao-conexao figure img{
+    width: 100%;
+}
+
+.secao-canal, .secao-conexao{
+    background-color: var(--cor-terceiro);
+}
+
+.secao-conexao h2{
+    font-family: var(--fonte-secundaria);
+}
+
+.rodape{
+    background-color: var(--cor-primeiro);
+    padding: 2rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .cabecalho{
+        text-align: center;
+        background-size: contain;
+        padding: 20%;
+        height: auto;
+    }
+
+    .cabecalho__titulo{
+        font-size: 4rem;
+    }
+
+    .cabecalho__botoes{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .secao-convite , .secao-canal, .secao-organizar, .secao-conexao{
+        gap: 2rem;
+        padding: 2rem 14rem;
+        font-size: 1.8rem;
+    }
+
+    .secao-convite, .secao-canal, .secao-organizar{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .secao-canal div{
+        order: -1;
+    }
+
+    .secao-convite h2, .secao-canal h2, .secao-organizar h2{
+    font-size: 4rem;
+    }
+    .secao-conexao{
+        text-align: center;
+    }
+
+    .secao-conexao figure img{
+        width: 50%;
+    }
+}
